@@ -1,4 +1,4 @@
-// Canva 1.0
+// Canva 1.1
 // See https://github.com/undefined06855/Canva for licencing
 
 
@@ -51,6 +51,8 @@ canvas.addEventListener("mousemove", event => {
     mouse.x = event.pageX
     mouse.y = event.pageY
 })
+
+canvas.setAttribute("-data-canva-version", "canva-1.1")
 
 document.body.appendChild(canvas)
 
