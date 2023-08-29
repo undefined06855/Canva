@@ -52,7 +52,7 @@ canvas.addEventListener("mousemove", event => {
     mouse.y = event.pageY
 })
 
-canvas.setAttribute("-data-canva-version", "canva-1.1")
+canvas.setAttribute("data-canva-version", "canva-1.1")
 
 document.body.appendChild(canvas)
 
