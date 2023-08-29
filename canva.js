@@ -6,7 +6,7 @@
 let canvas = document.createElement("canvas")
   , ctx = canvas.getContext("2d")
 
-  , screen = {
+  , $screen = {
     width: 0, height: 0
   }
 
@@ -20,15 +20,15 @@ window.addEventListener("resize", _ => {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    screen.width = canvas.width
-    screen.height = canvas.height
+    $screen.width = canvas.width
+    $screen.height = canvas.height
 })
 
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
-screen.width = canvas.width
-screen.height = canvas.height
+$screen.width = canvas.width
+$screen.height = canvas.height
 
 canvas.addEventListener("mousedown", event => {
     mouse.down = true
