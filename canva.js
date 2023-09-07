@@ -1,4 +1,4 @@
-// Canva 1.1
+// Canva 1.2
 // See https://github.com/undefined06855/Canva for licencing
 
 
@@ -52,12 +52,12 @@ canvas.addEventListener("mousemove", event => {
     mouse.y = event.pageY
 })
 
-canvas.setAttribute("data-canva-version", "canva-1.1")
+canvas.setAttribute("data-canva-version", "canva-1.2")
 
 document.body.appendChild(canvas)
 
 // run in iife to prevent user accesing styles variable
-(() => {
+!(() => {
     let styles = document.createElement("style")
     styles.innerText = "html,body,canvas{margin:0;padding:0;width:100%;height:100%;background-color:rgb(0,0,0);overflow:hidden;}"
     document.head.appendChild(styles)
@@ -73,7 +73,7 @@ window.addEventListener("load", _ => {
         load() // run the load function if it exists
     } catch (_)
     {
-        hasLoadFunction = false
+        if (typeof canvaSuppressLoadFunctionError === "undefined") hasLoadFunction = false
     }
 
     try
@@ -81,7 +81,7 @@ window.addEventListener("load", _ => {
         main // dont run the function... yet
     } catch (_)
     {
-        hasMainFunction = false
+        if (typeof canvaSuppressMainFunctionError === "undefined") hasMainFunction = false
     }
 
     if (!hasMainFunction && !hasLoadFunction) console.error("Canva: No load or main function found!")
